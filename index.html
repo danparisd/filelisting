@@ -183,9 +183,7 @@
 
                         var outputDirectory = [];
                         outputDirectory.push('<tr>',
-                                        '<th>Type</th>',
                                         '<th>Name</th>',
-                                        '<th>ContentLength</th>',
                                         '<th>Operations</th>',
                                     '</tr>');
                         if (results.entries.directories.length < 1 && results.entries.files.length < 1) {
@@ -193,9 +191,7 @@
                         }
                         for (var i = 0, dir; dir = results.entries.directories[i]; i++) {
                             outputDirectory.push('<tr>',
-                                                    '<td>', 'DIR', '</td>',
                                                     '<td>', dir.name, '</td>',
-                                                    '<td>', dir.contentLength, '</td>',
                                                     '<td>', '<button class="btn btn-xs btn-danger" onclick="deleteDirectory(\'', dir.name ,'\')">Delete</button> ',
                                                             '<button class="btn btn-xs btn-success" onclick="refreshDirectoryFileList(\'', dir.name ,'\')">View</button>', '</td>',
                                                 '</tr>');
@@ -208,11 +204,8 @@
 
                         for (var i = 0, file; file = results.entries.files[i]; i++) {
                             outputFiles.push('<tr>',
-                                                '<td>', 'FILE', '</td>',
                                                 '<td>', file.name, '</td>',
-                                                '<td>', file.contentLength, '</td>',
-                                                '<td>', '<button class="btn btn-xs btn-danger" onclick="deleteFile(\'', file.name ,'\')">Delete</button> ',
-                                                        '<a class="btn btn-xs btn-success" href="', fileUri + '/' + fileShare + '/' + currentDir + file.name + sas, '" download>Download</a>' , '</td>',
+                                                '<td>', '<a class="btn btn-xs btn-success" href="', fileUri + '/' + fileShare + '/' + currentDir + file.name + sas, '" download>Download</a>' , '</td>',
                                               '</tr>');
                         }
                         document.getElementById('directoryFiles').innerHTML = '<table class="table table-condensed table-bordered">' + outputDirectory.join('') + outputFiles.join('') + '</table>';

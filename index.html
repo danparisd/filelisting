@@ -1,3 +1,17 @@
+<h1>App Builder</h1><body>
+  <form action="https://scriptureappbuilder.azurewebsites.net/api/appbuildertrigger" method=GET>
+    AppName (letters only)<br>
+    <input type="text" name="repoName">
+    <br>
+    Repo URL<br>
+    <input type="text" name="repoURL">
+    <br><br>
+    <button type="submit">Build Me an App!</button>
+  </form>
+</body>
+
+<hr>
+
 <p><button class="btn btn-xs btn-primary" onclick="refreshDirectoryFileList()">ListFilesAndDirectories</button></p>
 
 <label><b></b></label><input type="hidden" id="account" value="scriptureappstorage"/>
